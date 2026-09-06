@@ -1,3 +1,4 @@
+import os
 import dash
 from dash import dcc, html, Input, Output, dash_table
 import pandas as pd
@@ -228,4 +229,5 @@ def update_terminal(selected_tiers, risk_range, search_term, budget, rescue_rate
             fig_scatter, fig_pie, table_data, sim_ui)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8050)
+    port = int(os.environ.get('PORT', 8050))
+    app.run(host='0.0.0.0', port=port, debug=False)
