@@ -228,6 +228,8 @@ def update_terminal(selected_tiers, risk_range, search_term, budget, rescue_rate
     return (kpi1_children, kpi1_style, kpi2_children, kpi2_style, kpi3_children, kpi3_style,
             fig_scatter, fig_pie, table_data, sim_ui)
 
+import os
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8050))
     app.run(host='0.0.0.0', port=port, debug=False)
